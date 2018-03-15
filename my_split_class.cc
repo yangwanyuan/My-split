@@ -47,6 +47,11 @@ bool MySplit::CheckParameter() {
         return false;
     }
 
+    if (!S_ISREG(stat_buf.st_mode)) {
+        LogError("This path is not a regular file");
+        return false;
+    }
+
     capacity_ = stat_buf.st_size;
 
     if(split_size_ <= 0) {
