@@ -1,4 +1,4 @@
 *.o
 my-split
-test.log
+test.log*
 

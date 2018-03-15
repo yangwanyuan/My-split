@@ -54,7 +54,13 @@ bool MySplit::CheckParameter() {
         return false;
     }
 
-    total_split_file_num_ = (capacity_ / split_size_) + 1;
+    if (capacity_ % split_size_ == 0) {
+        total_split_file_num_ = (capacity_ / split_size_);
+    }
+    else {
+        total_split_file_num_ = (capacity_ / split_size_) + 1;
+    }
+
     if (total_split_file_num_ > 1000) {
         LogWarn("Maybe split too many files!");
     }
