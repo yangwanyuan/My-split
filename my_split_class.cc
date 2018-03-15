@@ -58,7 +58,7 @@ bool MySplit::CheckParameter() {
     if (total_split_file_num_ > 1000) {
         LogWarn("Maybe split too many files!");
     }
-
+        
     data_buf_ = new char[split_size_];
 
     is_check = true;

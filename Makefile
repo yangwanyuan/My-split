@@ -1,11 +1,8 @@
-main: my-split test
+main: my-split
 
-my_split:
-	g++ --std=c++11 my-split.cc -o my-split
-
-test:
-	g++ --std=c++11 my_split_class.cc test.cc -o test
+my-split:
+	g++ --std=c++11 my_split_class.cc my-split.cc -o my-split
 
 clean:
 	rm -fr my-split
-	rm -fr test
+
