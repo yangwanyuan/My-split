@@ -90,7 +90,7 @@ bool MySplit::Split() {
 }
 
 bool MySplit::WriteNewFile(int file_id) {
-    string split_filename = file_path_ + std::string(".") + std::to_string(file_id);
+    string split_filename = file_path_ + std::string(".") + std::to_string(file_id + 1);
 
     int split_fd = open(split_filename.c_str(), O_RDWR | O_CREAT, 0666);
     if (split_fd < 0) {
